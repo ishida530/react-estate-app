@@ -4,13 +4,16 @@
     display: flex;
     gap: 20px;
 
-    .imageContainer {
+    @include sm {
+        // display: none;
+        flex-direction: column;
+    }
+
+    .imgContainer {
         flex: 2;
         height: 200px;
 
-        @include md {
-            display: none;
-        }
+
 
         img {
             width: 100%;
@@ -66,10 +69,18 @@
             justify-content: space-between;
             gap: 10px;
 
+            @include sm {
+                flex-direction: column;
+            }
+
             .features {
                 display: flex;
                 gap: 20px;
                 font-size: 14px;
+
+                @include sm {
+                    justify-content: space-between;
+                }
 
                 .feature {
                     display: flex;
@@ -84,6 +95,10 @@
             .icons {
                 display: flex;
                 gap: 20px;
+
+                @include sm {
+                    justify-content: flex-start;
+                }
 
                 .icon {
                     border: 1px solid #999;
