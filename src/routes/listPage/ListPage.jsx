@@ -4,6 +4,7 @@ import Card from '../../componenets/card/Card';
 import Filter from '../../componenets/filter/Filter';
 import { listData } from '../../lib/dummydata'
 import './listPage.scss'
+import Map from '../../componenets/map/Map';
 const data = listData;
 const ListPage = () => {
     const [list] = useState(data)
@@ -19,7 +20,7 @@ const ListPage = () => {
                 </div>
             </div>
             <div className="mapContainer">
-
+                <Map items={list} />
             </div>
 
         </div>
