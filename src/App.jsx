@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './routes/homepage/HomePage'
 import ListPage from './routes/listPage/ListPage'
-import Layout from './routes/layout/layout'
+import { RequireAuth, Layout } from './routes/layout/layout'
 import SinglePage from './routes/singlePage/SinglePage'
 import ProfilePage from './routes/profilePage/ProfilePage'
+import Register from './routes/register/Register'
+import LoginPage from './routes/loginPage/LoginPage'
 
 function App() {
 
@@ -26,13 +28,27 @@ function App() {
           path: '/:id',
           element: <SinglePage />
         },
+
         {
-          path: '/profile',
-          element: <ProfilePage />
+          path: '/register',
+          element: <Register />
+        },
+        {
+          path: '/login',
+          element: <LoginPage />
         }
       ]
     },
-
+    {
+      path: '/',
+      element: <RequireAuth />,
+      children: [
+        {
+          path: '/profile',
+          element: <ProfilePage />
+        },
+      ]
+    }
   ])
   return (
 
