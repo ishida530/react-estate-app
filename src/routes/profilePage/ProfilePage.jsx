@@ -1,5 +1,5 @@
-import Chat from "../../componenets/chat/Chat";
-import List from "../../componenets/list/List";
+import Chat from "../../components/chat/Chat";
+import List from "../../components/list/List";
 import "./profilePage.scss";
 import apiRequest from '../../lib/apiRequest'
 import { Link, useNavigate } from "react-router-dom";

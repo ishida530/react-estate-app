@@ -4,7 +4,6 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
-import UploadWidget from "../../componenets/uploadWidget/uploadWidget";
 
 function NewPostPage() {
     const [value, setValue] = useState("");
@@ -162,7 +161,7 @@ function NewPostPage() {
                 {images.map((image, index) => (
                     <img src={image} key={index} alt="" />
                 ))}
-                <UploadWidget
+                <UploadW
                     uwConfig={{
                         multiple: true,
                         cloudName: "lamadev",

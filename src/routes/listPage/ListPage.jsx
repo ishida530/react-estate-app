@@ -1,10 +1,10 @@
 
 import { useState } from 'react';
-import Card from '../../componenets/card/Card';
-import Filter from '../../componenets/filter/Filter';
+import Card from '../../components/card/Card';
+import Filter from '../../components/filter/Filter';
 import { listData } from '../../lib/dummydata'
 import './listPage.scss'
-import Map from '../../componenets/map/Map';
+import Map from '../../components/map/Map';
 const data = listData;
 const ListPage = () => {
     const [list] = useState(data)
