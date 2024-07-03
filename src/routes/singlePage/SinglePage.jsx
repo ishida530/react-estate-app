@@ -26,7 +26,11 @@ function SinglePage() {
             setSaved((prev) => !prev);
         }
     };
-
+    const formatDistance = (distance) => {
+        return distance > 999
+            ? (distance / 1000).toFixed(1) + ' km'
+            : distance + ' m';
+    };
     return (
         <div className="singlePage">
             <div className="details">
@@ -50,7 +54,7 @@ function SinglePage() {
                         <div
                             className="bottom"
                             dangerouslySetInnerHTML={{
-                                __html: DOMPurify.sanitize(post.postDetail.desc),
+                                __html: DOMPurify.sanitize(post.postDetail.description),
                             }}
                         ></div>
                     </div>
@@ -112,10 +116,7 @@ function SinglePage() {
                             <div className="featureText">
                                 <span>School</span>
                                 <p>
-                                    {post.postDetail.school > 999
-                                        ? post.postDetail.school / 1000 + "km"
-                                        : post.postDetail.school + "m"}{" "}
-                                    away
+                                    {formatDistance(post.postDetail.school)} away
                                 </p>
                             </div>
                         </div>
@@ -123,14 +124,18 @@ function SinglePage() {
                             <img src="/pet.png" alt="" />
                             <div className="featureText">
                                 <span>Bus Stop</span>
-                                <p>{post.postDetail.bus}m away</p>
+                                <p>
+                                    {formatDistance(post.postDetail.bus)} way
+                                </p>
                             </div>
                         </div>
                         <div className="feature">
                             <img src="/fee.png" alt="" />
                             <div className="featureText">
                                 <span>Restaurant</span>
-                                <p>{post.postDetail.restaurant}m away</p>
+                                <p>
+                                    {formatDistance(post.postDetail.restaurant)}  way
+                                </p>
                             </div>
                         </div>
                     </div>
