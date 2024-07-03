@@ -7,8 +7,8 @@ import ProfilePage from './routes/profilePage/ProfilePage'
 import Register from './routes/register/Register'
 import LoginPage from './routes/loginPage/LoginPage'
 import ProfileUpdatePage from './routes/profileUpdatePage/profileUpdatePage'
-import { singlePageLoader } from './lib/loaders'
 import NewPostPage from './routes/newPostPage/NewPostPage'
+import { listPageLoader, profilePageLoader, singlePageLoader } from './lib/loaders'
 
 function App() {
 
@@ -25,7 +25,8 @@ function App() {
         },
         {
           path: '/list',
-          element: <ListPage />
+          element: <ListPage />,
+          loader: listPageLoader
         },
         {
           path: '/:id',
@@ -49,7 +50,9 @@ function App() {
       children: [
         {
           path: '/profile',
-          element: <ProfilePage />
+          element: <ProfilePage />,
+          loader: profilePageLoader
+
         },
         {
           path: '/profile/update',
@@ -63,12 +66,7 @@ function App() {
     }
   ])
   return (
-
-
-
-    <RouterProvider router={router}>
-
-    </RouterProvider>
+    <RouterProvider router={router} />
   )
 }
 
