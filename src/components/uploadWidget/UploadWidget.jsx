@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 const CloudinaryScriptContext = createContext();
 
-function UploadWidget({ uwConfig, setPublicId, setState }) {
+function UploadWidget({ uwConfig, setState }) {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {

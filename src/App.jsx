@@ -7,8 +7,8 @@ import ProfilePage from './routes/profilePage/ProfilePage'
 import Register from './routes/register/Register'
 import LoginPage from './routes/loginPage/LoginPage'
 import ProfileUpdatePage from './routes/profileUpdatePage/profileUpdatePage'
-import NewPostPage from './routes/newPostPage/NewPostPage'
 import { singlePageLoader } from './lib/loaders'
+import NewPostPage from './routes/newPostPage/NewPostPage'
 
 function App() {
 
